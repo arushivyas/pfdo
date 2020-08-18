@@ -13,11 +13,11 @@ def readme():
 setup(
       name             =   'pfdo',
       version          =   '1.0.0',
-      description      =   'Base machinery for performing operations on pf trees',
+      description      =   'Base machinery for performing operations on pftrees',
       long_description =   readme(),
       author           =   'FNNDSC',
       author_email     =   'dev@babymri.org',
-      url              =   'https://github.com/FNNDSC/pfdicom_tagSub',
+      url              =   'https://github.com/FNNDSC/pfdo',
       packages         =   ['pfdo'],
       install_requires =   ['pfmisc'],
       #test_suite       =   'nose.collector',
