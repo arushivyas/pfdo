@@ -310,6 +310,7 @@ class pfdo(object):
         d_filter        : dict  = {}
         d_pftreeProbe   : dict  = {}
         d_pftreeRun     : dict  = {}
+        b_JSONprint     : bool  = True
 
         self.dp.qprint(
                 "Starting pfdo run... (please be patient while running)",
@@ -318,6 +319,7 @@ class pfdo(object):
 
         for k, v in kwargs.items():
             if k == 'timerStart':   b_timerStart    = bool(v)
+            if k == 'JSONprint':    b_JSONprint     = bool(v)
 
         if b_timerStart:    other.tic()
 
@@ -347,7 +349,7 @@ class pfdo(object):
             'runTime':          other.toc()
         }
 
-        if self.args['json']:
+        if self.args['json'] and b_JSONprint:
             self.ret_dump(d_ret, **kwargs)
         else:
             self.dp.qprint('Returning from pfdo base class run...', level = 1)
