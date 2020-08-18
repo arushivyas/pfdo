@@ -195,7 +195,8 @@ class pfdo(object):
 
         return {
             'status':       b_status,
-            'filesSaved':   filesSaved
+            'filesSaved':   filesSaved,
+            'overwrite':    self.args['overwrite']
         }
 
     def filelist_prune(self, at_data, *args, **kwargs) -> dict:
