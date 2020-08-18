@@ -124,23 +124,18 @@ Command line arguments
 Examples
 --------
 
-Perform a DICOM anonymization by processing specific tags:
+Run down a directory tree and touch all the files in the input tree that are ``jpgs`` to similar locations in the output directory:
 
 .. code:: bash
-
-    Perform a `pfdo` down some input directory:
 
         pfdo                                                \\
             -I /var/www/html/data -f jpg                    \\
             -O /tmp/jpg --test --json                       \\
             --threads 0 --printElapsedTime
 
-    The above will find all files in the tree structure rooted at
-    /var/www/html/data that also contain the string "jpg" anywhere
-    in the filename. For each file found, a corresponding file will
-    be touched in the output directory, in the same tree location as
-    the original input. This touched file will be prefixed with the
-    string "analyzed-".
 
-    Finally the elapsed time and a JSON output are printed.
+The above will find all files in the tree structure rooted at /var/www/html/data that also contain the string "jpg" anywhere in the filename. For each file found, a corresponding file will be touched in the output directory, in the same tree location as the original input. This touched file will be prefixed with the
+string "analyzed-".
+
+Finally the elapsed time and a JSON output are printed.
 
