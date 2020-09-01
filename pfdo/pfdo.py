@@ -355,3 +355,31 @@ class pfdo(object):
             self.dp.qprint('Returning from pfdo base class run...', level = 1)
 
         return d_ret
+
+class object_factoryCreate:
+    """
+    A class that examines input file string for extension information and
+    returns the relevant convert object.
+    """
+
+    def __init__(self, args):
+        """
+        Parse relevant CLI args.
+        """
+
+        self.C_convert = pyimgconvert(
+            inputFile            = args.inputFile,
+            inputDir             = args.inputDir,
+            outputDir            = args.outputDir,
+            filterExpression     = args.filter,
+            printElapsedTime     = args.printElapsedTime,
+            threads              = args.threads,
+            outputLeafDir        = args.outputLeafDir,
+            test                 = args.test,
+            man                  = args.man,
+            synopsis             = args.synopsis,
+            json                 = args.json,
+            followLinks          = args.followLinks,
+            verbosity            = args.verbosity,
+            version              = args.version
+        )
