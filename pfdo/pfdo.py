@@ -367,7 +367,7 @@ class object_factoryCreate:
         Parse relevant CLI args.
         """
 
-        self.C_convert = pyimgconvert(
+        self.C_convert = pfdo(
             inputFile            = args.inputFile,
             inputDir             = args.inputDir,
             outputDir            = args.outputDir,
