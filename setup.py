@@ -12,14 +12,14 @@ def readme():
 
 setup(
       name             =   'pfdo',
-      version          =   '1.0.8',
+      version          =   '1.0.10',
       description      =   'Base machinery for performing operations on pftrees',
       long_description =   readme(),
       author           =   'FNNDSC',
       author_email     =   'dev@babymri.org',
       url              =   'https://github.com/FNNDSC/pfdo',
       packages         =   ['pfdo'],
-      install_requires =   ['pfmisc'],
+      install_requires =   ['pfmisc', 'pftree'],
       #test_suite       =   'nose.collector',
       #tests_require    =   ['nose'],
       scripts          =   ['bin/pfdo'],
