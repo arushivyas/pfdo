@@ -91,6 +91,8 @@ class pfdo(object):
         In almost all cases, this method should be overloaded by a
         descendant class.
         """
+
+        print("Input read callback was called")
         str_path        : str       = ''
         l_fileProbed    : list      = []
         l_fileRead      : list      = []
@@ -164,6 +166,8 @@ class pfdo(object):
 
         This dummy method is mostly for illustration.
         """
+       
+        print("Output save callback was called")
 
         str_outputPath          : str   = ""
         d_inputAnalyzeCallback  : dict  = {}
@@ -188,6 +192,8 @@ class pfdo(object):
                         error.warn(self, 'outputFileExists', drawBox = True)
                         b_status = False
                         break
+                print(str_outputPath)
+                print(f)
                 os.mknod('%s/%s' % (str_outputPath, f))
                 b_status                = True
                 self.dp.qprint("saving: %s/%s" % (str_outputPath, f), level = 5)
@@ -210,6 +216,7 @@ class pfdo(object):
         str_path    : str       = at_data[0]
         al_file     : list      = at_data[1]
 
+        print("AL_FILE"+ al_file)
         if len(self.args['filter']):
             al_file = [x for x in al_file if self.args['filter'] in x]
 
@@ -304,6 +311,9 @@ class pfdo(object):
         since this contains the calls to the first `pftree` prove as well
         as any (overloaded) file filtering.
         """
+
+        # pudb.set_trace()
+
         b_status        : bool  = False
         b_timerStart    : bool  = False
         d_env           : dict  = {}
@@ -322,6 +332,8 @@ class pfdo(object):
             if k == 'JSONprint':    b_JSONprint     = bool(v)
 
         if b_timerStart:    other.tic()
+
+        pudb.set_trace()
 
         d_env = self.env_check()
         if d_env['status']:
